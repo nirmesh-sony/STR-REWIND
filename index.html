@@ -1,0 +1,310 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<div class="text-bg-info p-3 mt-4 col-md-12" style="height: 150;">
+  <h1 style="text-align: center;">REWIND: Speech Time Reversal for Enhancing Speaker Representations in Diffusion-based Voice Conversion</h1>
+</div>
+
+<div class="mt-4 col-md-12" style="text-align: center;" >
+  <h2 style="text-align: center;" >Model Architecture</h2>
+</div>
+<div class="mt-4 col-md-12" style="text-align: center;" >
+  <figure>
+    <img 
+        style="display: block; 
+              margin-left: auto;
+              margin-right: auto;
+              width: 70%;"
+        src="./STR_Block_Diagram.png"
+        alt="REWIND: Speech Time Reversal for Enhancing Speaker Representations in Diffusion-based Voice Conversion">
+    <figcaption>Figure 1. Blockdiagram of the propose approach in Diffusion-based Voice Conversion. </figcaption>
+</figure>
+</div>
+
+<h2 style="text-decoration: underline;">Demo Samples for Voice Conversion</h2>
+<table class="table">
+<tbody>
+    <tr>
+		<th style="text-align:center;"> Methods</th>
+        <th style="text-align:center;"> Sample 1</th>
+        <th style="text-align:center;"> Sample 2</th>
+        <th style="text-align:center;"> Sample 3</th>
+    </tr>
+    <tr>
+        <td style="width:200px"> Source </td>
+        <td><audio controls style="width: 350px; height: 50px">
+            <source src=".\Demo\Source_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+        </td>
+        <td>
+            <audio controls style="width: 350px; height: 50px">
+            <source src=".\Demo\Source_2.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+            </audio>
+        </td>
+                <td>
+                    <audio controls style="width: 350px; height: 50px">
+                    <source src=".\Demo\Source_3.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                    </audio>
+                </td>
+			</tr>
+            <tr>
+                <td style="width:200px"> Reference </td>
+                <td>
+                    <audio controls style="width: 350px; height: 50px">
+                    <source src=".\Demo\Reference_1.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                    </audio>
+                </td>
+                <td>
+                        <audio controls style="width: 350px; height: 50px">
+                        <source src=".\Demo\Reference_2.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls style="width: 350px; height: 50px">
+                        <source src=".\Demo\Reference_3.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:200px"> DDDM-VC </td>
+                    <td>
+                        <audio controls style="width: 350px; height: 50px">
+                        <source src=".\Demo\DDDM_1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                            <audio controls style="width: 350px; height: 50px">
+                            <source src=".\Demo\DDDM_2.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls style="width: 350px; height: 50px">
+                            <source src=".\Demo\DDDM_3.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:200px"> DDDM-VC + Ours </td>
+                        <td>
+                            <audio controls style="width: 350px; height: 50px">
+                            <source src=".\Demo\DDDM_P_1.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                                <audio controls style="width: 350px; height: 50px">
+                                <source src=".\Demo\DDDM_P_2.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls style="width: 350px; height: 50px">
+                                <source src=".\Demo\DDDM_P_3.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>  
+                        <tr>
+                            <td style="width:200px"> DiffHier-VC</td>
+                            <td>
+                                <audio controls style="width: 350px; height: 50px">
+                                <source src=".\Demo\DiffHier_1.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                    <audio controls style="width: 350px; height: 50px">
+                                    <source src=".\Demo\DiffHier_2.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls style="width: 350px; height: 50px">
+                                    <source src=".\Demo\DiffHier_3.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                    </audio>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:200px"> DiffHier-VC + Ours </td>
+                                <td>
+                                    <audio controls style="width: 350px; height: 50px">
+                                    <source src=".\Demo\DiffHier_P_1.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                    </audio>
+                                </td>
+                                <td>
+                                        <audio controls style="width: 350px; height: 50px">
+                                        <source src=".\Demo\DiffHier_P_2.wav" type="audio/wav">
+                                        Your browser does not support the audio element.
+                                        </audio>
+                                    </td>
+                                    <td>
+                                        <audio controls style="width: 350px; height: 50px">
+                                        <source src=".\Demo\DiffHier_P_3.wav" type="audio/wav">
+                                        Your browser does not support the audio element.
+                                        </audio>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:200px"> Diff-VC </td>
+                                    <td>
+                                        <audio controls style="width: 350px; height: 50px">
+                                        <source src=".\Demo\Diff_1.wav" type="audio/wav">
+                                        Your browser does not support the audio element.
+                                        </audio>
+                                    </td>
+                                    <td>
+                                            <audio controls style="width: 350px; height: 50px">
+                                            <source src=".\Demo\Diff_2.wav" type="audio/wav">
+                                            Your browser does not support the audio element.
+                                            </audio>
+                                        </td>
+                                        <td>
+                                            <audio controls style="width: 350px; height: 50px">
+                                            <source src=".\Demo\Diff_3.wav" type="audio/wav">
+                                            Your browser does not support the audio element.
+                                            </audio>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:200px"> Diff-VC + Ours </td>
+                                        <td>
+                                            <audio controls style="width: 350px; height: 50px">
+                                            <source src=".\Demo\Diff_P_1.wav" type="audio/wav">
+                                            Your browser does not support the audio element.
+                                            </audio>
+                                        </td>
+                                        <td>
+                                                <audio controls style="width: 350px; height: 50px">
+                                                <source src=".\Demo\Diff_P_2.wav" type="audio/wav">
+                                                Your browser does not support the audio element.
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                <audio controls style="width: 350px; height: 50px">
+                                                <source src=".\Demo\Diff_P_3.wav" type="audio/wav">
+                                                Your browser does not support the audio element.
+                                                </audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:200px"> LMVC </td>
+                                            <td>
+                                                <audio controls style="width: 350px; height: 50px">
+                                                <source src=".\Demo\LMVC_1.wav" type="audio/wav">
+                                                Your browser does not support the audio element.
+                                                </audio>
+                                            </td>
+                                            <td>
+                                                    <audio controls style="width: 350px; height: 50px">
+                                                    <source src=".\Demo\LMVC_2.wav" type="audio/wav">
+                                                    Your browser does not support the audio element.
+                                                    </audio>
+                                                </td>
+                                                <td>
+                                                    <audio controls style="width: 350px; height: 50px">
+                                                    <source src=".\Demo\LMVC_3.wav" type="audio/wav">
+                                                    Your browser does not support the audio element.
+                                                    </audio>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:200px"> SEFVC </td>
+                                                <td>
+                                                    <audio controls style="width: 350px; height: 50px">
+                                                    <source src=".\Demo\SEFVC_1.wav" type="audio/wav">
+                                                    Your browser does not support the audio element.
+                                                    </audio>
+                                                </td>
+                                                <td>
+                                                        <audio controls style="width: 350px; height: 50px">
+                                                        <source src=".\Demo\SEFVC_2.wav" type="audio/wav">
+                                                        Your browser does not support the audio element.
+                                                        </audio>
+                                                    </td>
+                                                    <td>
+                                                        <audio controls style="width: 350px; height: 50px">
+                                                        <source src=".\Demo\SEFVC_3.wav" type="audio/wav">
+                                                        Your browser does not support the audio element.
+                                                        </audio>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:200px"> StyleVC </td>
+                                                    <td>
+                                                        <audio controls style="width: 350px; height: 50px">
+                                                        <source src=".\Demo\StyleVC_1.wav" type="audio/wav">
+                                                        Your browser does not support the audio element.
+                                                        </audio>
+                                                    </td>
+                                                    <td>
+                                                            <audio controls style="width: 350px; height: 50px">
+                                                            <source src=".\Demo\StyleVC_2.wav" type="audio/wav">
+                                                            Your browser does not support the audio element.
+                                                            </audio>
+                                                        </td>
+                                                        <td>
+                                                            <audio controls style="width: 350px; height: 50px">
+                                                            <source src=".\Demo\StyleVC_3.wav" type="audio/wav">
+                                                            Your browser does not support the audio element.
+                                                            </audio>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width:200px"> StableVC </td>
+                                                        <td>
+                                                            <audio controls style="width: 350px; height: 50px">
+                                                            <source src=".\Demo\StableVC_1.wav" type="audio/wav">
+                                                            Your browser does not support the audio element.
+                                                            </audio>
+                                                        </td>
+                                                        <td>
+                                                                <audio controls style="width: 350px; height: 50px">
+                                                                <source src=".\Demo\StableVC_2.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                                </audio>
+                                                            </td>
+                                                            <td>
+                                                                <audio controls style="width: 350px; height: 50px">
+                                                                <source src=".\Demo\StableVC_3.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                                </audio>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:200px"> VALLE VC </td>
+                                                            <td>
+                                                                <audio controls style="width: 350px; height: 50px">
+                                                                <source src=".\Demo\VALLE_1.wav" type="audio/wav">
+                                                                Your browser does not support the audio element.
+                                                                </audio>
+                                                            </td>
+                                                            <td>
+                                                                    <audio controls style="width: 350px; height: 50px">
+                                                                    <source src=".\Demo\VALE_2.wav" type="audio/wav">
+                                                                    Your browser does not support the audio element.
+                                                                    </audio>
+                                                                </td>
+                                                                <td>
+                                                                    <audio controls style="width: 350px; height: 50px">
+                                                                    <source src=".\Demo\VALLE_3.wav" type="audio/wav">
+                                                                    Your browser does not support the audio element.
+                                                                    </audio>
+                                                                </td>
+                                                            </tr>
+            </tbody>
+		</table>
+
+
+
+
